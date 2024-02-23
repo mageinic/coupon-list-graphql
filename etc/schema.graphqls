@@ -1,0 +1,20 @@
+type Query {
+    """phpcs:ignore Magento2.GraphQL.ValidArgumentName"""
+    guestCouponList(cart_id: String! @doc(description: "The unique ID of the cart to query.")): CouponList @resolver (class: "\\MageINIC\\CouponListGraphQl\\Model\\Resolver\\GuestCouponList") @doc(description:"Return information Guest coupon list.") @cache(cacheable: false)
+    customerCouponList: CouponList! @resolver (class: "\\MageINIC\\CouponListGraphQl\\Model\\Resolver\\CustomerCouponList") @doc(description:"Return information about Registered Customer coupon list.") @cache(cacheable: false)
+}
+
+type CouponList @doc(description: "active coupon list.") {
+    items: [CouponListInfo] @doc(description: "The number of records returned.")
+}
+
+type CouponListInfo {
+    name: String @doc(description: "Cart Rule Name")
+    description: String @doc(description: "Cart Rule Description.")
+    coupon: String @doc(description: "Coupon.")
+}
+
+## Store Config Values ##
+type StoreConfig {
+    coupon_list_module_status : Int @doc(description: "Module Enable. 0 (No) or 1 (Yes).")
+}

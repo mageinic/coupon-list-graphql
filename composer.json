@@ -1,0 +1,29 @@
+{
+    "name": "mageinic/coupon-list-graphql",
+    "description": "Hyva coupon list",
+    "require": {
+        "php": "^8.0",
+        "mageinic/coupon-list": "1.0.*"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "authors": [
+        {
+            "name": "MageINIC",
+            "email": "support@mageinic.com",
+            "homepage": "https://www.mageinic.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MageINIC\\CouponListGraphQl\\": ""
+        }
+    }
+}
